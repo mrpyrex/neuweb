@@ -4,11 +4,11 @@
 {% block content %}
 
 <div class="container">
-    
-        <h1>About Us</h1>  
-        <p>We believe that high-quality, meaningful digital products can help transform organizations. Since 2017, we've helped a handful of startup businesses to succeed through the use of innovative technologies. From the conception to implementation, <a href="">neupytech</a>'s team of talented strategists, designers, and developers from many disciplines and backgrounds, utilizes a case-by-case approach in ensuring that every project that we handle gets tailor-fit solutions.</p>
-        <p>We see ourselves as partners and not as vendors -  we are not just trying to sell you service but beyond that, we aim to become part of your team. We'll allign with our vision and mission to help you build products that does not only reflect what you are selling but also your values.</p>
-    
+    <section id="about">
+    <h1>About Us</h1>  
+    <p>We believe that high-quality, meaningful digital products can help transform organizations. Since 2017, we've helped a handful of startup businesses to succeed through the use of innovative technologies. From the conception to implementation, <a href="">neupytech</a>'s team of talented strategists, designers, and developers from many disciplines and backgrounds, utilizes a case-by-case approach in ensuring that every project that we handle gets tailor-fit solutions.</p>
+    <p>We see ourselves as partners and not as vendors -  we are not just trying to sell you service but beyond that, we aim to become part of your team. We'll allign with our vision and mission to help you build products that does not only reflect what you are selling but also your values.</p>
+    </section>  
 </div>
 
 <div id="team" class="container">
@@ -18,7 +18,7 @@
         <div class="col-md-6 my-4">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ team.pic.url }}" alt="{{ team.name }}">
+                    <img class="rounded-circle" src="{{ team.pic.url }}" alt="{{ team.name }}">
                 </div>
                 <div class="col-md-6">
                     <h2>{{ team.name }}</h2>

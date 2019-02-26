@@ -147,6 +147,12 @@ p {
     margin: 0;
 }
 
+/* About Page */
+
+#about {
+    margin-top: 6rem;
+}
+
 /* Team Section */
 
 #team a {
