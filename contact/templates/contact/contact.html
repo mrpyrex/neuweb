@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+    
+{% block content %}
+<div id="contact" class="container">
+    <div class="row">
+        <div id="contact-form" class="col-md-8">
+            <h1>Contact Us</h1>
+            <form method="POST" action="{% url 'contact:contact' %}">{% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-outline-primary btn-lg" type="submit"><i class="fab fa-telegram-plane mr-2"></i>Send</button>
+            </form>
+        </div>
+        <div id="contact-address" class="col-md-4 text-center">
+            <ul>
+                <li><i class="fas fa-road mr-2"></i>14, Ring Road, Idua Eket, Akwa Ibom</li>
+                <li><i class="fas fa-mobile mr-2"></i>+234 7033 197 665</li>
+                <li><i class="far fa-envelope mr-2"></i><a href="mailto:support@neupytech.com">support@neupytech.com</a></li>
+            </ul>
+            <div>
+                <a href="https://twitter.com/neupytech"><i class="fab fa-twitter"></i></a>
+                <a href="https://web.facebook.com/neupytech/"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

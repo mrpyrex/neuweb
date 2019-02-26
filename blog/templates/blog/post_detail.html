@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<div class="container bg-light ">
+    <div id="blog-details">
+        <div class="row">
+            <h1 class="mx-auto display-3">{{ post.title }}</h1>
+        </div>
+        <div class="row">
+                <ul class="blog-nav mx-auto">
+                    <li><i class="far fa-user mr-2"></i><a href="{% url 'user-post' post.author.username %}">{{ post.author|capfirst }}</a></li>
+                    <li>
+                        <i class="far fa-calendar-alt mr-2"></i>{{ post.date_posted|date:"F d, Y" }}
+                    </li>
+                    <li>
+                        {% with comments.count as total_comments %}<i class="far fa-comments mr-2"></i>
+                        {{ total_comments }} Comment{{ total_comments|pluralize }}
+                        {% endwith %}
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="row">
+                <img class="mx-auto" src="{{ post.thumb.url }}" alt="">
+            </div> 
+            <div class="row">
+                <p>{{ post.content|safe }}</p>
+            </div>
+            <div class="row">
+                <h5>Share this post</h5>
+                <div>
+                    <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+                    <!-- Your share button code -->
+                    <ul id="share-icons">
+                        <li>
+                            <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true">
+                            </div>
+                        </li>
+                        <li>
+                            <a href="{{ request.build_absolute_uri }}" class="twitter-share-button" data-show-count="true">Tweet</a>
+                        </li>
+                        <li>
+                           <a href="{% url 'blog:post_share' post.slug %}"><i class="far fa-envelope fa-2x"></i></a> 
+                        </li>
+                    </ul>
+                    
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="container bg-light">
+    <section id="comment">
+        <div class="row">
+            <div>
+                <div>
+                    {% with comments.count as total_comments %}
+                    <h3>{{ total_comments }} Comment{{ total_comments|pluralize }}</h3>
+                    {% endwith %}
+    
+                    {% for comment in comments %}
+                    <div>
+                        <p>Comment {{ forloop.counter }} by {{ comment.name.capitalize }} {{ comment.date }} {{ comment.body|linebreaks }}</p>
+                    </div>
+                    {% empty %}
+                    <p>Be the first to comment</p>
+                    {% endfor %}
+    
+                    {% if new_comment %}
+                    <h3>Your comment has been added</h3>
+                    {% else %}
+                    <h3>Add a new comment</h3>
+                    <form method="POST" action="">{% csrf_token %}
+                        {{ comment_form|crispy }}
+                        <input class="btn btn-primary" type="submit" value="Add comment">
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row p-4">
+            {% for post in similar_posts %}
+                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+            {% empty %}
+            There are no similar posts
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}

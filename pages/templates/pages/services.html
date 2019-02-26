@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div id="services" class="container">
+    <h1 class="text-center display-2">Services</h1>
+    <p class="text-center">Neupytech uses strategy with tested and reliable technological methodology to bring the best user experience.</p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6 img">
+                    <img src="{% static 'img/planning.svg' %}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h2>Strategy</h2>
+                    <p>We understand business and as such know that a good website, app or software depends on a properly setout strategy, hence we begin every project with a tailor made one-of-a-kind strategy to give you business the best foundation it deserves.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6 img">
+                    <img src="{% static 'img/web.svg' %}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h2>Web Design</h2>
+                    <p>At <a href="">neupytech</a>, our philosopy is that a website is more than just a combination of colors and fonts, it's a tool for progress. therefore, we combine human-centered design with functionality to push performance for you.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                    <div class="col-md-6 img">
+                    <img src="{% static 'img/mobile.svg' %}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h2>Mobile Development</h2>
+                    <p>Life is on a fast lane these days and so is business, that's why we build mobile apps that engage your customers even while they are on the go or just hanging!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6 img">
+                    <img src="{% static 'img/digital.svg' %}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h2>Digital Marketing</h2>
+                    <p>Our believe is centered on deeper collaboration, powerful storytelling, and analytical rigor – combined with the agile methodology to bring marketing to a point where it more data-driven and rewult oriented.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

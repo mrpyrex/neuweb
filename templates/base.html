@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto|Lato|Cabin|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+    
+    <title>neupytech</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top px-4">
+        <a class="navbar-brand" href="{% url 'pages:home' %}"><img class="rounded-circle" src="{% static 'img/logo.jpg' %}" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'pages:about' %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'pages:services' %}">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact:contact' %}">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'blog:blog-home' %}">Blog</a>
+            </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://twitter.com/neupytech" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://web.facebook.com/neupytech/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        
+    {% block content %}
+    {% endblock %}
+
+    <footer id="main-footer" class="text-center">
+        <div class="container">
+            <ul>
+                <li><i class="fas fa-road mr-2"></i>14, Ring Road, Idua Eket, Akwa Ibom</li>
+                .
+                <li><i class="fas fa-mobile mr-2"></i>+234 7033 197 665</li>
+                .
+                <li><i class="far fa-envelope mr-2"></i>info@neupytech.com</li>
+            </ul>
+            <div>
+                <a href="https://twitter.com/neupytech" target="_blank"><i class="fab fa-twitter"></i></a>
+                .
+                <a href="https://web.facebook.com/neupytech/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                .
+                <a href="#"><i class="fab fa-linkedin-in" target="_blank"></i></a>
+                .
+                <a href="#"><i class="fab fa-instagram" target="_blank"></i></a>
+            </div>
+        </div>
+        <hr>
+        <p>&copy; neupytech {% now 'Y' %}. All rights reserved | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!-- <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script> -->
+</body>
+</html>

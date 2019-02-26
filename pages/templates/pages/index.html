@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+    
+{% block content %}
+<!-- Jumbotron -->
+
+<div class="jumbotron jumbotron-fluid text-white">
+    <div class="container">
+        <h1 class="display-1">Conceive. Succeed</h1>
+        <hr class="my-4">
+        <div class="row">
+            <div class="col-md-10">
+                <p>We help companies build powerful custom software that enables them to innovate and grow their businesses. Powerful websites, web apps, and interfaces that drive engagement, solve problems, and delight users.</p>
+            </div>
+        </div>
+        <a class="btn btn-primary my-2" href="{% url 'contact:contact' %}" role="button">Let's make it happen</a>
+    </div>
+</div>
+
+
+<div class="circle-icon">
+    <div class="circle">
+        <img src="{% static 'img/web.svg' %}" alt="" class="svg">
+        <h3>Web Development</h3>
+    </div>
+    <div class="circle">
+        <img src="{% static 'img/mobile.svg' %}" alt="" class="svg">
+        <h3>Mobile Development</h3>
+    </div>
+    <div class="circle">
+        <img src="{% static 'img/digital.svg' %}" alt="">
+        <h3>Digital Marketing</h3>
+    </div>
+    <div class="circle">
+        <img src="{% static 'img/maintenance.svg' %}" alt="">
+        <h3>App Maintenance</h3>
+    </div>
+</div>
+
+<!-- About Section -->
+<div id="about" class="container">
+    <div class="row">
+        <div class="col-md-6">
+        <img src="{% static 'img/fistin.jpg' %}" alt="">
+        </div>
+        <div class="col-md-6 text-center">
+            <h2 class="display-2">About Us</h2>
+            <p>We are about making every project a truely memorable experience as we don't just take your order and serve out a website or a mobile app. At <a href="">neupytech</a> we ensure that we get to know what you are all about and tailor your app to suit your market and audience.</p>
+            <a href="{% url 'pages:about' %}" class="btn btn-outline-primary">Learn more</a>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div id="contact-section" class="py-5 text-center">
+  <h3>Need A Custom Website? Let's start with a free quote!</h3>
+  <P>Whatever your <strong>Conception</strong> is let's help you <strong>Succeed</strong> with our dedicated and up to date team of designers and marketers.</P>
+  <a class="btn btn-outline-primary" href="{% url 'contact:contact' %}"><i class="far fa-envelope mr-2"></i>Contact Us</a>
+</div>
+
+
+{% endblock %}
