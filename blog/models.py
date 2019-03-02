@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from django.utils.text import slugify
-from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from taggit.managers import TaggableManager
 
 
@@ -30,7 +30,7 @@ class PostCategory(models.Model):
 class Post(models.Model):
     title           = models.CharField(max_length=200, unique=True)
     slug            = models.SlugField(null=True)
-    content         = RichTextField()
+    content         = RichTextUploadingField()
     date_posted     = models.DateTimeField(default=timezone.now)
     thumb           = models.ImageField(blank=True, null=True, upload_to='images/')
     author          = models.ForeignKey(User, on_delete=models.CASCADE)

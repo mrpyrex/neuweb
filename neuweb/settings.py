@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'ckeditor',
     'taggit',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -146,12 +147,14 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL  = 'blog:blog-home'
 LOGIN_URL           = 'login'
 
+# CKEDITOR SETTINGS
 
 CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'js/jquery.js')
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 CKEDITOR_CONFIGS = {
     'default': {
-        # 'toolbar': 'full',
+        'toolbar': 'full',
         'height': 300,
         'width': '100%',
     },
